@@ -7,5 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel="srlist",path="srlist")
 public interface SREntityRepository extends PagingAndSortingRepository<SREntity, Integer>{
 
+	
 }
 
