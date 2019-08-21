@@ -1,5 +1,6 @@
 package org.pstcl.storeapi.model.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -35,17 +36,31 @@ public class SREntity {
 	private LocalDate srchallandate;
 	
 	@Column(name="totalvalue")
-	private Double totalvalue;
+	private BigDecimal totalvalue;
 	
 	@Column(name="grandtotal")
-	private Double grandtotal;
+	private BigDecimal grandtotal;
 	
 	public void setEstimateno(String estimateno) {
 		this.estimateno = estimateno;
 	}
-	public void setTotalvalue(Double totalvalue) {
+	
+	public BigDecimal getTotalvalue() {
+		return totalvalue;
+	}
+
+	public void setTotalvalue(BigDecimal totalvalue) {
 		this.totalvalue = totalvalue;
 	}
+
+	public BigDecimal getGrandtotal() {
+		return grandtotal;
+	}
+
+	public void setGrandtotal(BigDecimal grandtotal) {
+		this.grandtotal = grandtotal;
+	}
+
 	public Integer getItxno() {
 		return itxno;
 	}
@@ -87,18 +102,7 @@ public class SREntity {
 	}
 	
 	
-	public Double getTotalvalue() {
-		return totalvalue;
-	}
-	public void setSrchallanpageno(Double totalvalue) {
-		this.totalvalue = totalvalue;
-	}
-	public Double getGrandtotal() {
-		return grandtotal;
-	}
-	public void setGrandtotal(Double grandtotal) {
-		this.grandtotal = grandtotal;
-	}
+
 	
 	public LocalDate getSrchallandate() {
 		return srchallandate;
