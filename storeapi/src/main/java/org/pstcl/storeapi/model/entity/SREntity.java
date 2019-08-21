@@ -2,7 +2,6 @@ package org.pstcl.storeapi.model.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,7 +32,7 @@ public class SREntity {
 	private String srchallanpageno ;
 	
 	@Column(name="srchallandate")
-	private LocalDate srchallandate;
+	private LocalDate srChallanDate;
 	
 	@Column(name="totalvalue")
 	private BigDecimal totalvalue;
@@ -100,16 +99,18 @@ public class SREntity {
 	public void setSrchallanpageno(String srchallanpageno) {
 		this.srchallanpageno = srchallanpageno;
 	}
+
+	public LocalDate getSrChallanDate() {
+		return srChallanDate;
+	}
+
+	public void setSrChallanDate(LocalDate srChallanDate) {
+		this.srChallanDate = srChallanDate;
+	}
 	
 	
 
-	
-	public LocalDate getSrchallandate() {
-		return srchallandate;
-	}
-	public void setSrchallandate(LocalDate srchallandate) {
-		this.srchallandate = srchallandate;
-	}
+
 	
 	
 	
