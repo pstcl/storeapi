@@ -17,62 +17,96 @@ public class SREntity {
 	@Id
 	private Integer itxno;
 
-	@Column(name="datevoucher")
-	private LocalDate datevoucher;
 	
 	
-	@Column(name="datesentstore")
-	private LocalDate datesentstore;
+	@Column(name="estimateno")
+	private String estimateno ;
 	
+	@Column(name="divid")
+	private String divid ;
 	
-	@Column(name="dateapprovestore")
-	private LocalDate dateapprovestore;
-
-	@Column private String  stockitemyype;
-	@Column  private String stockitemcode;
-	@Column   private String stockitemname;
+	@Column(name="srchallanbookno")
+	private String srchallanbookno ;
+	
+	@Column(name="srchallanpageno")
+	private String srchallanpageno ;
+	
+	@Column(name="srchallandate")
+	private LocalDate srchallandate;
+	
+	@Column(name="totalvalue")
+	private Double totalvalue;
+	
+	@Column(name="grandtotal")
+	private Double grandtotal;
+	
+	public void setEstimateno(String estimateno) {
+		this.estimateno = estimateno;
+	}
+	public void setTotalvalue(Double totalvalue) {
+		this.totalvalue = totalvalue;
+	}
 	public Integer getItxno() {
 		return itxno;
 	}
 	public void setItxno(Integer itxno) {
 		this.itxno = itxno;
 	}
-	public LocalDate getDatevoucher() {
-		return datevoucher;
+	
+	
+	public String getEstimateno() {
+		return estimateno;
 	}
-	public void setDatevoucher(LocalDate datevoucher) {
-		this.datevoucher = datevoucher;
+	public void seEstimateno(String estimateno) {
+		this.estimateno = estimateno;
 	}
-	public LocalDate getDatesentstore() {
-		return datesentstore;
+	
+	public String getDivid() {
+		return divid;
 	}
-	public void setDatesentstore(LocalDate datesentstore) {
-		this.datesentstore = datesentstore;
+	public void setDivid(String divid) {
+		this.divid = divid;
 	}
-	public LocalDate getDateapprovestore() {
-		return dateapprovestore;
+	
+	
+	
+	public String getSrchallanbookno() {
+		return srchallanbookno;
 	}
-	public void setDateapprovestore(LocalDate dateapprovestore) {
-		this.dateapprovestore = dateapprovestore;
+	public void setSrchallanbookno(String srchallanbookno) {
+		this.srchallanbookno = srchallanbookno;
 	}
-	public String getStockitemyype() {
-		return stockitemyype;
+	
+	
+	
+	public String getSrchallanpageno() {
+		return srchallanpageno;
 	}
-	public void setStockitemyype(String stockitemyype) {
-		this.stockitemyype = stockitemyype;
+	public void setSrchallanpageno(String srchallanpageno) {
+		this.srchallanpageno = srchallanpageno;
 	}
-	public String getStockitemcode() {
-		return stockitemcode;
+	
+	
+	public Double getTotalvalue() {
+		return totalvalue;
 	}
-	public void setStockitemcode(String stockitemcode) {
-		this.stockitemcode = stockitemcode;
+	public void setSrchallanpageno(Double totalvalue) {
+		this.totalvalue = totalvalue;
 	}
-	public String getStockitemname() {
-		return stockitemname;
+	public Double getGrandtotal() {
+		return grandtotal;
 	}
-	public void setStockitemname(String stockitemname) {
-		this.stockitemname = stockitemname;
+	public void setGrandtotal(Double grandtotal) {
+		this.grandtotal = grandtotal;
 	}
+	
+	public LocalDate getSrchallandate() {
+		return srchallandate;
+	}
+	public void setSrchallandate(LocalDate srchallandate) {
+		this.srchallandate = srchallandate;
+	}
+	
 	
 	
 }

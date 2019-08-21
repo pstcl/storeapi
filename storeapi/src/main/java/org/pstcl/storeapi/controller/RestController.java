@@ -23,7 +23,7 @@ public class RestController {
 
 	private Pageable getPageRequest(int page,int limit)
 	{
-		Pageable pageRequest =PageRequest.of(page, limit, Sort.by("entityId.dateS").descending().and(Sort.by("entityId.timeS").descending()));
+		Pageable pageRequest =PageRequest.of(page, limit);
 		return pageRequest;
 
 	}
