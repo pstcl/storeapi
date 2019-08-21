@@ -19,8 +19,12 @@ public class SREntity {
 
 	@Column(name="datevoucher")
 	private LocalDate datevoucher;
+	
+	
 	@Column(name="datesentstore")
 	private LocalDate datesentstore;
+	
+	
 	@Column(name="dateapprovestore")
 	private LocalDate dateapprovestore;
 
