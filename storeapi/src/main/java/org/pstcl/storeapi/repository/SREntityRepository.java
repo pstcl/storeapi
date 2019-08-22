@@ -8,5 +8,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 //@RepositoryRestResource(collectionResourceRel="srlist",path="srlist")
 public interface SREntityRepository extends PagingAndSortingRepository<SREntity, Integer>{
-	List<SREntity> findBySrChallanDateBetween(LocalDate start, LocalDate end);
+	
+		List<SREntity> findBySrChallanDateBetween(LocalDate start, LocalDate end);
 }

@@ -5,12 +5,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.pstcl.storeapi.Service;
 import org.pstcl.storeapi.model.entity.SREntity;
-import org.pstcl.storeapi.repository.SREntityRepository;
 import org.pstcl.storeapi.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,27 +17,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RestController {
 
 	@Autowired
-	private SREntityRepository entityRepository;
-
-	private Pageable getPageRequest(int page,int limit)
-	{
-		Pageable pageRequest =PageRequest.of(page, limit);
-		return pageRequest;
-
-	}
+	private Service service;
 
 	@CrossOrigin(allowCredentials="true")
 	@GetMapping(value = "/srlist") 
-	public  List<SREntity> srlist(@RequestParam(value = "page") Integer page,
-			@RequestParam(value = "size") Integer size,HttpServletResponse response,HttpServletRequest request) {
-		return entityRepository.findAll(getPageRequest(page,size)).getContent();
+	public  List<SREntity> srlist(@RequestParam(value = "page", required = false) Integer page,
+			@RequestParam(value = "size", required = false) Integer size,HttpServletResponse response,HttpServletRequest request) {
+		return service.srlist(page, size);
 	}
-	
+
 	@CrossOrigin(allowCredentials="true")
 	@GetMapping(value = "/srlistbymonth") 
-	public  List<SREntity> srlistbymonth(@RequestParam(value = "month") Integer month,
-			@RequestParam(value = "year") Integer year,HttpServletResponse response,HttpServletRequest request) {
-		return entityRepository.findBySrChallanDateBetween(DateUtil.startDateForMonth(month, year),DateUtil.endDateForMonth(month, year));
+	public  List<SREntity> srlistbymonth(
+			@RequestParam(value = "month", required = false) Integer month,
+			@RequestParam(value = "year", required = false) Integer year,
+			@RequestParam(value = "loc", required = false) String loc,
+			HttpServletResponse response,HttpServletRequest request) {
+		return service.srlistbymonth(month, year, loc);
 	}
 
 }

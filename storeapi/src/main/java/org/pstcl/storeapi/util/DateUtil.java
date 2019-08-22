@@ -10,13 +10,13 @@ public class DateUtil {
 
 	public static LocalDate startDateForMonth(Integer month,Integer year)
 	{
-		LocalDate localDate=LocalDate.of(month,year,1);
+		LocalDate localDate=((null!=month)&&(null!=year)&&(month>0&&month<13)&&(year>1990&&month<2100))?LocalDate.of(year,month,1):LocalDate.now();
 		return localDate;
 	}
 	
 	public static LocalDate endDateForMonth(Integer month,Integer year)
 	{
-		LocalDate localDate=LocalDate.of(month,year,1);
+		LocalDate localDate=((null!=month)&&(null!=year)&&(month>0&&month<13)&&(year>1990&&month<2100))?LocalDate.of(year,month,1):LocalDate.now();
 		return localDate.with(TemporalAdjusters.lastDayOfMonth());
 	}
 
